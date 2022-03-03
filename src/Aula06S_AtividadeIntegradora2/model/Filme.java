@@ -3,12 +3,12 @@ package Aula06S_AtividadeIntegradora2.model;
 public class Filme {
     private String titulo;
     private String pais;
-    private String linkReproducao;
+    private String link;
 
-    public Filme(String titulo, String pais, String linkReproducao) {
+    public Filme(String titulo, String pais, String link) {
         this.titulo = titulo;
         this.pais = pais;
-        this.linkReproducao = linkReproducao;
+        this.link = link;
     }
 
     public String getTitulo() {
@@ -27,20 +27,11 @@ public class Filme {
         this.pais = pais;
     }
 
-    public String getLinkReproducao() {
-        return linkReproducao;
+    public String getLink() {
+        return link;
     }
 
-    public void setLinkReproducao(String linkReproducao) {
-        this.linkReproducao = linkReproducao;
-    }
-
-    @Override
-    public String toString() {
-        return "Filme{" +
-                "titulo='" + titulo + '\'' +
-                ", pais='" + pais + '\'' +
-                ", linkReproducao='" + linkReproducao + '\'' +
-                '}';
+    public void setLink(String link) {
+        this.link = link;
     }
 }

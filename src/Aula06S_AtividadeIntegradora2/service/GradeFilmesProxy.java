@@ -15,15 +15,19 @@ public class GradeFilmesProxy implements IGradeFilmes {
         gradeFilmes.addFilme(filme);
     }
 
+    public int getIp() {
+        return ip;
+    }
+
     @Override
     public Filme getFilme(String titulo) throws FilmeNaoHabilitadoException {
         Filme filme = gradeFilmes.getFilme(titulo);
 
-        if (ip >= 0 && ip <= 49 && filme.getPais().equals("AR")) {
+        if (this.getIp() >= 0 && this.getIp() <= 49 && filme.getPais().equals("AR")) {
             return filme;
-        } else if (ip >= 50 && ip <= 99 && filme.getPais().equals("BR")) {
+        } else if (this.getIp()  >= 50 && this.getIp()  <= 99 && filme.getPais().equals("BR")) {
             return filme;
-        } else if (ip >= 100 && ip <= 149 && filme.getPais().equals("CO")) {
+        } else if (this.getIp()  >= 100 && this.getIp()  <= 149 && filme.getPais().equals("CO")) {
             return filme;
         } else {
             throw new FilmeNaoHabilitadoException("Filme não disponível no seu país");
